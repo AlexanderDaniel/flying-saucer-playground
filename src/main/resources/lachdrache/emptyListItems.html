@@ -6,7 +6,17 @@
     <link media="all" rel="Stylesheet" type="text/css" href="emptyListItems.css"/>
   </head>
   <body>
-    <p>TODO describe style</p>
+    <p>
+      List items with <code>list-style: none</code> are used in this example.
+      With <code>li:before</code> and the <code>content</code> property a
+      custom list item marker is added.
+    </p>
+    <p>
+      Additionally <code>li:before</code> uses <code>position: absolute</code>.
+      For that to work the enclosing <code>li</code> element has to use <code>position: relative</code>.
+      This is very well explained in <a href="http://learnlayout.com/position.html">Learn CSS Layout</a>.
+      That has following effects:
+    </p>
 
     <p>Empty list item at the beginning is not displayed:</p>
     <ul>
@@ -48,14 +58,7 @@
       I have an idea. The list item markers are drawn above each other.
       So let's try with a ordered list:
     </p>
-    <ol>
-      <li>one</li>
-      <li>two</li>
-      <li>three</li>
-      <li>four</li>
-      <li></li>
-    </ol>
-    <p>First item is empty:</p>
+    <p>Empty list item at the beginning:</p>
     <ol>
       <li></li>
       <li>two</li>
@@ -63,6 +66,31 @@
       <li>four</li>
       <li>five</li>
     </ol>
-    <p>It has other side effects as well.</p>
+
+    <p>Empty list item in the middle:</p>
+    <ol>
+      <li>one</li>
+      <li>two</li>
+      <li></li>
+      <li>four</li>
+      <li>five</li>
+    </ol>
+    <ol>
+      <li>one</li>
+      <li></li>
+      <li>three</li>
+      <li></li>
+      <li>five</li>
+    </ol>
+
+    <p>Empty list item at the end:</p>
+    <ol>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li></li>
+    </ol>
+    <p>It has other side effects as well. The spacing between the list and the next paragraph is not correct.</p>
   </body>
 </html>
