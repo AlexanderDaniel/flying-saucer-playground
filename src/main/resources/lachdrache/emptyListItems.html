@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+    <title>Empty List Items</title>
+    <link media="all" rel="Stylesheet" type="text/css" href="emptyListItems.css"/>
+  </head>
+  <body>
+    <p>TODO describe style</p>
+
+    <p>Empty list item at the beginning is not displayed:</p>
+    <ul>
+      <li></li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li>five</li>
+    </ul>
+
+    <p>Empty list item in the middle is not displayed:</p>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li></li>
+      <li>four</li>
+      <li>five</li>
+    </ul>
+    <ul>
+      <li>one</li>
+      <li></li>
+      <li>three</li>
+      <li></li>
+      <li>five</li>
+    </ul>
+
+    <p>But an empty list item at the end gets displayed:</p>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li></li>
+    </ul>
+
+    <p>Do you have an idea why?</p>
+
+    <p>
+      I have an idea. The list item markers are drawn above each other.
+      So let's try with a ordered list:
+    </p>
+    <ol>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li></li>
+    </ol>
+    <p>First item is empty:</p>
+    <ol>
+      <li></li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li>five</li>
+    </ol>
+    <p>It has other side effects as well.</p>
+  </body>
+</html>
