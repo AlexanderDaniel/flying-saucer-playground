@@ -10,28 +10,27 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
 
-public class PageSequences {
+public class PdfGenerator {
+    private static final Logger logger = LoggerFactory.getLogger(PdfGenerator.class);
 
-    private static final Logger logger = LoggerFactory.getLogger(PageSequences.class);
-
-    public static void main(String[] args) throws Exception {
+    public static void generatePdf(String name) throws Exception {
         configureLogging();
 
-        logger.info("Starting PDF generation");
+        logger.info(String.format("Starting PDF generation for %s", name));
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        generatePdf();
+        renderPdf(name);
 
         stopWatch.stop();
         logger.info("PDF generation took " + stopWatch.getTime() + "ms");
     }
 
-    private static void generatePdf() throws Exception {
+    private static void renderPdf(String name) throws Exception {
         ITextRenderer renderer = new ITextRenderer();
-        renderer.setDocument(PageSequences.class.getResource("/lachdrache/pageSequences.html").toURI().toString());
+        renderer.setDocument(EmptyListItems.class.getResource(String.format("/lachdrache/%s.html", name)).toURI().toString());
         renderer.layout();
-        renderer.createPDF(new FileOutputStream(new File("target/pageSequences.pdf")), true);
+        renderer.createPDF(new FileOutputStream(new File(String.format("target/%s.pdf", name))), true);
     }
 
     /**
@@ -42,5 +41,4 @@ public class PageSequences {
         System.getProperties().setProperty("xr.util-logging.handlers", "org.slf4j.bridge.SLF4JBridgeHandler");
         XRLog.setLevel("", Level.INFO);
     }
-
 }
