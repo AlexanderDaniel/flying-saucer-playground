@@ -31,7 +31,6 @@
     .pagenumber:before {
       content: counter(page);
     }
-
     .pagecount:before {
       content: counter(pages);
     }
@@ -39,19 +38,19 @@
 </head>
 <body>
   <div>
-    <h1>first page</h1>
+    <h1>Document Sections with Separate Page Numbers</h1>
+    <p>The document has four sections:</p>
+    <ul>
+      <li>This »first page«</li>
+      <li>TOC page</li>
+      <li>English version with separate page numbering</li>
+      <li>German version with separate page numbering</li>
+    </ul>
     <p>
       The example is based on
       <a href="https://github.com/flyingsaucerproject/flyingsaucer/pull/38">support for page sequences in target-counter function</a>
       pull request.
     </p>
-    <p>The sample consists of</p>
-    <ul>
-      <li>This »first page«</li>
-      <li>TOC page</li>
-      <li>Content block 1 with separate page numbering</li>
-      <li>Content block 2 with separate page numbering</li>
-    </ul>
     <p>To generate the PDF please run <a href="../../java/lachdrache/PageSequences.java">PageSequences</a> class.</p>
   </div>
 
