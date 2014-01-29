@@ -15,7 +15,7 @@ has document sections with separate page numbers:
 - English version (header with page numbering)
 - German version (header with page numbering starting from 1 again)
 
-Generate a PDF from it with [DocumentSectionsWithSeparatePageNumbers.java](src/main/java/lachdrache/DocumentSectionsWithSeparatePageNumbers.java)
+Generate a PDF from it with [DocumentSectionsWithSeparatePageNumbers.java](src/main/java/lachdrache/DocumentSectionsWithSeparatePageNumbers.java).
 
 [PdfGenerator](src/main/java/lachdrache/PdfGenerator.java) demonstrates how to
 bridge/redirect Flying Saucer logging to [SLF4J](http://www.slf4j.org).
