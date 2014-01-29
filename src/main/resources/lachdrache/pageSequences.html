@@ -1,0 +1,46 @@
+<html>
+<head>
+  <style type="text/css" media="print">
+    @page content {
+      @bottom-right {
+        content: counter(page) " of " counter(pages);
+      }
+    }
+    a.toc-entry:after {
+      content: " (" target-counter(attr(href), page) ")";
+    }
+    .content-block {
+      -fs-page-sequence: start;
+      page-break-before: always;
+      page: content;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>first page</h1>
+  </div>
+
+  <div style="page-break-before: always;">
+    <h1>toc page</h1>
+    <ul>
+      <li><a class="toc-entry" href="#test1">link to toc entry 1</a></li>
+      <li><a class="toc-entry" href="#test2">link to toc entry 2</a></li>
+      <li><a class="toc-entry" href="#test3">link to toc entry 3</a></li>
+      <li><a class="toc-entry" href="#test4">link to toc entry 4</a></li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h1>content page</h1>
+    <p id="test1">toc entry here</p>
+    <p style="page-break-before: always;" id="test2">toc entry here</p>
+  </div>
+
+  <div class="content-block">
+    <h1>content page</h1>
+    <p id="test3">toc entry here</p>
+    <p style="page-break-before: always;" id="test4">toc entry here</p>
+  </div>
+</body>
+</html>
