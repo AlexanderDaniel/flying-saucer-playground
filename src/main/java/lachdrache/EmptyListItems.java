@@ -10,9 +10,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
 
-public class App {
+public class EmptyListItems {
 
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static final Logger logger = LoggerFactory.getLogger(EmptyListItems.class);
 
     public static void main(String[] args) throws Exception {
         configureLogging();
@@ -29,7 +29,7 @@ public class App {
 
     private static void generatePdf() throws Exception {
         ITextRenderer renderer = new ITextRenderer();
-        renderer.setDocument(App.class.getResource("/lachdrache/emptyListItems.html").toURI().toString());
+        renderer.setDocument(EmptyListItems.class.getResource("/lachdrache/emptyListItems.html").toURI().toString());
         renderer.layout();
         renderer.createPDF(new FileOutputStream(new File("target/emptyListItems.pdf")), true);
     }
