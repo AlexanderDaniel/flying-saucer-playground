@@ -2,7 +2,10 @@
 <head>
   <style type="text/css" media="print">
     @page content {
-      @bottom-right {
+      @top-left {
+        content: element(header-top-left)
+      }
+      @top-right {
         content: counter(page) " of " counter(pages);
       }
     }
@@ -14,11 +17,27 @@
       page-break-before: always;
       page: content;
     }
+    .header-top-left {
+      position: running(header-top-left);
+    }
   </style>
 </head>
 <body>
   <div>
     <h1>first page</h1>
+    <p>
+      The example is based on
+      <a href="https://github.com/flyingsaucerproject/flyingsaucer/pull/38">support for page sequences in target-counter function</a>
+      pull request.
+    </p>
+    <p>The sample consists of</p>
+    <ul>
+      <li>This »first page«</li>
+      <li>TOC page</li>
+      <li>Content block 1 with separate page numbering</li>
+      <li>Content block 2 with separate page numbering</li>
+    </ul>
+    <p>To generate the PDF please run <a href="../../java/lachdrache/PageSequences.java">PageSequences</a> class.</p>
   </div>
 
   <div style="page-break-before: always;">
@@ -32,13 +51,20 @@
   </div>
 
   <div class="content-block">
-    <h1>content page</h1>
+    <div class="header-top-left">
+      English version
+    </div>
+    <h1>English version of the contract</h1>
     <p id="test1">toc entry here</p>
     <p style="page-break-before: always;" id="test2">toc entry here</p>
   </div>
 
   <div class="content-block">
-    <h1>content page</h1>
+    <div class="header-top-left">
+      Deutsche Version
+    </div>
+    <h1>Deutsche Version des Vertrags</h1>
+    <p>This is the German version.</p>
     <p id="test3">toc entry here</p>
     <p style="page-break-before: always;" id="test4">toc entry here</p>
   </div>
