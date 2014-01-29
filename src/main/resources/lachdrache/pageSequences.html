@@ -3,22 +3,37 @@
   <style type="text/css" media="print">
     @page content {
       @top-left {
-        content: element(header-top-left)
+        content: element(header-top-left);
       }
       @top-right {
-        content: counter(page) " of " counter(pages);
+        content: element(header-top-right);
       }
     }
     a.toc-entry:after {
       content: " (" target-counter(attr(href), page) ")";
     }
     .content-block {
+      /*noinspection CssUnknownProperty*/
       -fs-page-sequence: start;
       page-break-before: always;
+      /*noinspection CssUnknownProperty*/
       page: content;
     }
     .header-top-left {
+      /*noinspection CssInvalidElement*/
       position: running(header-top-left);
+    }
+    .header-top-right {
+      /*noinspection CssInvalidElement*/
+      position: running(header-top-right);
+      text-align: right;
+    }
+    .pagenumber:before {
+      content: counter(page);
+    }
+
+    .pagecount:before {
+      content: counter(pages);
     }
   </style>
 </head>
@@ -54,6 +69,9 @@
     <div class="header-top-left">
       English version
     </div>
+    <div class="header-top-right">
+      <span class="pagenumber"></span> of <span class="pagecount"></span>
+    </div>
     <h1>English version of the contract</h1>
     <p id="test1">toc entry here</p>
     <p style="page-break-before: always;" id="test2">toc entry here</p>
@@ -62,6 +80,9 @@
   <div class="content-block">
     <div class="header-top-left">
       Deutsche Version
+    </div>
+    <div class="header-top-right">
+      <span class="pagenumber"></span> von <span class="pagecount"></span>
     </div>
     <h1>Deutsche Version des Vertrags</h1>
     <p>This is the German version.</p>
