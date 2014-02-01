@@ -7,10 +7,19 @@
   margin-bottom: 1cm;
 }
 
+ul:first-child {
+  page-break-before: auto;
+}
+
+ul {
+  page-break-before: always;
+}
+
 li {
   border: medium solid black;
   width: 8.5cm;
   height: 5cm;
+  page-break-inside: avoid;
 
   /* not using inline-block because it leaves horizontal space http://stackoverflow.com/questions/5256533/a-space-between-inline-block-list-items */
   display: block;
