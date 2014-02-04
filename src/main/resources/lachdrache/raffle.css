@@ -18,8 +18,8 @@ ul {
 li {
   border: medium solid black;
   width: 8.5cm;
-  height: 5cm;
-  page-break-inside: avoid;
+  height: 3.5cm;
+  padding-top: 1.5cm;
 
   /* not using inline-block because it leaves horizontal space http://stackoverflow.com/questions/5256533/a-space-between-inline-block-list-items */
   display: block;
@@ -27,7 +27,7 @@ li {
 
   text-align: center;
   /* http://phrogz.net/css/vertical-align/index.html */
-  line-height: 5cm;
+  /*line-height: 2cm;*/
 
   font-size: 16pt;
 }
