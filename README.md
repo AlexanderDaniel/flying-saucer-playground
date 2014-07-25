@@ -20,4 +20,8 @@ Generate a PDF from it with [DocumentSectionsWithSeparatePageNumbers.java](src/m
 [PdfGenerator](src/main/java/lachdrache/PdfGenerator.java) demonstrates how to
 bridge/redirect Flying Saucer logging to [SLF4J](http://www.slf4j.org).
 
+[latinCounterIssue.html](src/main/resources/lachdrache/latinCounterIssue.html)
+demonstrates an issue with latin counters. Generate a PDF by running
+[LatinCounterIssue.java](src/main/java/lachdrache/LatinCounterIssue.java).
+
 
