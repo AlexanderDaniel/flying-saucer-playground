@@ -1,0 +1,8 @@
+h1 {
+  counter-reset: h2Counter 24;
+}
+
+h2:before {
+  counter-increment: h2Counter;
+  content: counter(h2Counter, upper-latin) ") ";
+}
